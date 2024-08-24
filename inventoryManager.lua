@@ -23,6 +23,7 @@ function inventoryManager.advancedCheck()
     end
   end
   if inventorySlotsFilled == 16 then
+    print("here2")
     turtle.select(1)
     turtle.placeUp()
     local eChest = peripheral.wrap("top")

@@ -28,4 +28,27 @@ function telemetryManager.update(amount_forward, amount_down, direction_modifier
   end
 
   telemetryManager.dataReporting["dataReporting"]()
+  telemetryManager.save()
+end
+
+function telemetryManager.save()
+local info = {
+  config = {
+    forward_blocks= configMenu.forward_blocks,
+    right_blocks= configMenu.right_blocks,
+    inventory_management= configMenu.inventory_management,
+    fuel_management= configMenu.fuel_management,
+    data_reporting= configMenu.data_reporting,
+    data_reporting_port= configMenu.data_reporting_port
+},
+telemetry= {
+    current_orientation= telemetryManager.current_orientation,
+    current_x= telemetryManager.current_x,
+    current_y= telemetryManager.current_y,
+    current_z= telemetryManager.current_z
+}}
+
+local file = fs.open("saveData.json", "w")
+file.write(textutils.serializeJSON(info))
+file.close()
 end

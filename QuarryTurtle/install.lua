@@ -1,0 +1,6 @@
+shell.run("wget", "https://raw.githubusercontent.com/Larsiess/ComputerCraft/main/QuarryTurtle/startup.lua", "startup.lua")
+shell.run("wget", "https://raw.githubusercontent.com/Larsiess/ComputerCraft/main/QuarryTurtle/telemetryManager.lua", "telemetryManager.lua")
+shell.run("wget", "https://raw.githubusercontent.com/Larsiess/ComputerCraft/main/QuarryTurtle/quarryController.lua", "quarryController.lua")
+shell.run("wget", "https://raw.githubusercontent.com/Larsiess/ComputerCraft/main/QuarryTurtle/movementManager.lua", "movementManager.lua")
+shell.run("wget", "https://raw.githubusercontent.com/Larsiess/ComputerCraft/main/QuarryTurtle/inventoryManager.lua", "inventoryManager.lua")
+shell.run("wget", "https://raw.githubusercontent.com/Larsiess/ComputerCraft/main/QuarryTurtle/configMenu.lua", "configMenu.lua")

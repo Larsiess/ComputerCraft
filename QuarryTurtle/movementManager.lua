@@ -1,17 +1,42 @@
 movementManager = {}
 
-function movementManager.lol()
-  print("penis")
-  print(configMenu.forward_blocks)
-end
+-- function movementManager.testCon()
+--   print(movementManager.configMenu.forward_blocks)
+-- end
 
-function movementManager.dig_big_row()
-  local goal
-  if telemetryManager.current_y == configMenu.forward_blocks then
-    goal = 1
-  else
-    goal = configMenu.forward_blocks
+function movementManager.dig_big_row(goal)
+  if goal == nil then
+    print("here")
+    if telemetryManager.current_y == movementManager.configMenu.forward_blocks then
+      goal = 1
+    else
+      goal = movementManager.configMenu.forward_blocks
+    end
   end
+  print("current_y " .. movementManager.configMenu.forward_blocks)
+  print("goal " .. goal)
+
+  local x = 0
+  if(goal == 1) then
+    x = 2
+  else
+    x = 0
+  end
+  if (telemetryManager.current_orientation == 1 and x == 0) or (telemetryManager.current_orientation == 3 and x == 2) then
+    repeat
+      turtle.turnRight()
+      telemetryManager.update(0,0,1)
+      turtle.dig()
+    until telemetryManager.current_orientation == x
+  end
+  if (telemetryManager.current_orientation == 1 and x == 2) or (telemetryManager.current_orientation == 3 and x == 0)  then
+    repeat
+      turtle.turnLeft()
+      telemetryManager.update(0,0,-1)
+      turtle.dig()
+    until telemetryManager.current_orientation == x
+  end
+
 
   while telemetryManager.current_y ~= goal do
     local succes, block = turtle.inspectDown()
@@ -34,12 +59,13 @@ function movementManager.dig_big_row()
   end
 end
 
-function movementManager.dig_small_row()
-  local goal
-  if telemetryManager.current_y == configMenu.forward_blocks then
-    goal = 1
-  else
-    goal = configMenu.forward_blocks
+function movementManager.dig_small_row(goal)
+  if goal == nil then
+    if telemetryManager.current_y == movementManager.configMenu.forward_blocks then
+      goal = 1
+    else
+      goal = movementManager.configMenu.forward_blocks
+    end
   end
 
   while telemetryManager.current_y ~= goal do
@@ -58,11 +84,13 @@ function movementManager.turn(next_big, next_small)
   if next_big > 0 then
     turtle.forward()
     turtle.dig()
+    telemetryManager.update(1,0,0)
     turtle.forward()
     turtle.dig()
+    telemetryManager.update(1,0,0)
     turtle.forward()
     turtle.dig()
-    telemetryManager.update(3,0,0)
+    telemetryManager.update(1,0,0)
   elseif next_small > 0 then
     local x = 1
     local succes, reason = turtle.forward()
@@ -74,7 +102,7 @@ function movementManager.turn(next_big, next_small)
     telemetryManager.update(x,0,0)
   end
 
-  if telemetryManager.current_y == configMenu.forward_blocks then
+  if telemetryManager.current_y == movementManager.configMenu.forward_blocks then
     turtle.turnRight()
     telemetryManager.update(0,0,1)
   else

@@ -1,0 +1,21 @@
+{
+    "config": {
+        "forward_blocks": 16,
+        "right_blocks": 16,
+        "inventory_management": 0,
+        "fuel_management": 0,
+        "data_reporting": 0,
+        "data_reporting_port": 0
+    },
+    "telemetry": {
+        "current_orientation": 3,
+        "current_x": 2,
+        "current_y": 10,
+        "current_z": 1
+    },
+    "progress": {
+        "big_rows_done": 0,
+        "small_rows_done": 0,
+        "current_row_goal": 16
+    }
+}

@@ -57,21 +57,23 @@ function movementManager.turn(next_big, next_small)
 
   if next_big > 0 then
     turtle.forward()
+    telemetryManager.update(1,0,0)
     turtle.dig()
     turtle.forward()
+    telemetryManager.update(1,0,0)
     turtle.dig()
     turtle.forward()
+    telemetryManager.update(1,0,0)
     turtle.dig()
-    telemetryManager.update(3,0,0)
+    telemetryManager.update(1,0,0)
   elseif next_small > 0 then
-    local x = 1
     local succes, reason = turtle.forward()
     if succes == true then
-      x = x + 1
+      telemetryManager.upate(1,0,0)
     end
     turtle.dig()
     turtle.forward()
-    telemetryManager.update(x,0,0)
+    telemetryManager.update(1,0,0)
   end
 
   if telemetryManager.current_y == configMenu.forward_blocks then

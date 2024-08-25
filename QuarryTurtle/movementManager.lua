@@ -65,7 +65,6 @@ function movementManager.turn(next_big, next_small)
     turtle.forward()
     telemetryManager.update(1,0,0)
     turtle.dig()
-    telemetryManager.update(1,0,0)
   elseif next_small > 0 then
     local succes, reason = turtle.forward()
     if succes == true then

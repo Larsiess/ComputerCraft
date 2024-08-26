@@ -5,5 +5,5 @@ shell.run("wget", "https://raw.githubusercontent.com/Larsiess/ComputerCraft/main
 shell.run("wget", "https://raw.githubusercontent.com/Larsiess/ComputerCraft/main/QuarryTurtle/movementManager.lua", "movementManager.lua")
 shell.run("wget", "https://raw.githubusercontent.com/Larsiess/ComputerCraft/main/QuarryTurtle/inventoryManager.lua", "inventoryManager.lua")
 shell.run("wget", "https://raw.githubusercontent.com/Larsiess/ComputerCraft/main/QuarryTurtle/configMenu.lua", "configMenu.lua")
-shell.run("wget", "https://raw.githubusercontent.com/Larsiess/ComputerCraft/main/QuarryTurtle/refuel.lua", "configMenu.lua")
+shell.run("wget", "https://raw.githubusercontent.com/Larsiess/ComputerCraft/main/QuarryTurtle/refuel.lua", "refuel.lua")
 shell.run("reboot")

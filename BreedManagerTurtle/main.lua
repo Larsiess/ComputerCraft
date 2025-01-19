@@ -34,6 +34,7 @@ function finalBreeding(breeder, chicks, slotCounter)
   for i=4, 6 do
     if breeder.getItemMeta(i) ~= nil then
       breeder.pushItems(peripheral.getName(breeder), i, 16, (slotCounter % 2) + 1)
+      chicks[(slotCounter % 2) + 1] = breeder.getItemMeta((slotCounter % 2) + 1)
       slotCounter = slotCounter + 1
     end
   end
